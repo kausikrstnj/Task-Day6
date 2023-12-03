@@ -1,0 +1,50 @@
+class Circle {
+    // Properties
+    private radius: number = 1.0;
+    private color: string = "red";
+
+    // Constructors
+    constructor(radius: number);
+    constructor(radius: number, color: string);
+
+    // Constructor Overloads
+    constructor(radius: number, color?: string) {
+        this.radius = radius;
+        if (color) {
+            this.color = color;
+        }
+    }
+    // Getter for radius
+    getRadius(): number {
+        return this.radius;
+    }
+    // Setter for radius
+    setRadius(radius: number): void {
+        this.radius = radius;
+    }
+    // Getter for color
+    getColor(): string {
+        return this.color;
+    }
+    // Setter for color
+    setColor(color: string): void {
+        this.color = color;
+    }
+    // Method to get a string representation of the circle
+    toString(): string {
+        return `Circle - Radius: ${this.radius}, Color: ${this.color}`;
+    }
+    // Method to calculate the area of the circle
+    getArea(): number {
+        return Math.PI * this.radius ** 2;
+    }
+    // Method to calculate the circumference of the circle
+    getCircumference(): number {
+        return 2 * Math.PI * this.radius;
+    }
+}
+
+// Example usage
+const circle1 = new Circle(3.5, "blue");
+console.log(circle1.toString());
+console.log(`Area: ${circle1.getArea()}, Circumference: ${circle1.getCircumference()}`);
